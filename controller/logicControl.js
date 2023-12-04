@@ -6,9 +6,9 @@ const doTheMath = (req, res, next) => {
     }
     else{
         const {a,b} = req.body;
-        if (a !== undefined && b !== undefined && !isNaN(a) && !isNaN(b)) {
-            result = parseFloat(a) * parseFloat(b);
-            res.json({result});
+        if (!isNaN(a)&&!isNaN(b)){
+            result = a * b;
+            res.status(200).json({result});
             next();
         } 
         else {
